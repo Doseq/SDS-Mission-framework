@@ -18,7 +18,7 @@ KitPickInit =
 	_idx = COMBO lbAdd "Oficer"; COMBO lbSetData [_idx, "co"];
 	_idx = COMBO lbAdd "Medyk"; COMBO lbSetData [_idx, "m"];
 	_idx = COMBO lbAdd "RTO"; COMBO lbSetData [_idx, "uav"];
-	_idx = COMBO lbAdd "Mechanik"; COMBO lbSetData [_idx, "eng"];
+	_idx = COMBO lbAdd "Mechanik"; COMBO lbSetData [_idx, "engm"];
 	COMBO lbAdd "----";
 	
     _idx = COMBO lbAdd "Dowódca oddziału"; COMBO lbSetData [_idx, "dc"];
@@ -59,31 +59,38 @@ KitPickInit =
     _idx = COMBO lbAdd "Amunicyjny MAT"; COMBO lbSetData [_idx, "matag"];
 	COMBO lbAdd "----";
 	
-	 _idx = COMBO lbAdd "Dowódca sekcji MTR"; COMBO lbSetData [_idx, "dc"];
-    _idx = COMBO lbAdd "Strzelec MTR"; COMBO lbSetData [_idx, "mtrg"];
-    _idx = COMBO lbAdd "Amunicyjny MTR"; COMBO lbSetData [_idx, "mtrag"];
-	COMBO lbAdd "----";
-	
     _idx = COMBO lbAdd "Dowódca sekcji HMG"; COMBO lbSetData [_idx, "dc"];
     _idx = COMBO lbAdd "Strzelec HMG"; COMBO lbSetData [_idx, "hmgg"];
    _idx = COMBO lbAdd "Amunicyjny HMG"; COMBO lbSetData [_idx, "hmgag"];
 	COMBO lbAdd "----";
 
+    _idx = COMBO lbAdd "Dowódca sekcji HAT"; COMBO lbSetData [_idx, "dc"];
+    _idx = COMBO lbAdd "Strzelec HAT"; COMBO lbSetData [_idx, "hatg"];
+    _idx = COMBO lbAdd "Amunicyjny HAT"; COMBO lbSetData [_idx, "hatag"];
+	COMBO lbAdd "----";
+	
     _idx = COMBO lbAdd "Dowódca sekcji AA"; COMBO lbSetData [_idx, "dc"];
     _idx = COMBO lbAdd "Strzelec AA"; COMBO lbSetData [_idx, "msamg"];
     _idx = COMBO lbAdd "Amunicyjny AA"; COMBO lbSetData [_idx, "msamag"];
 	COMBO lbAdd "----";
 
+    _idx = COMBO lbAdd "Dowódca sekcji GMG"; COMBO lbSetData [_idx, "dc"];
+    _idx = COMBO lbAdd "Strzelec GMG"; COMBO lbSetData [_idx, "hsamg"];
+    _idx = COMBO lbAdd "Amunicyjny GMG"; COMBO lbSetData [_idx, "hsamag"];
+	COMBO lbAdd "----";
+	
     _idx = COMBO lbAdd "Dowódca sekcji SF"; COMBO lbSetData [_idx, "divc"];
     _idx = COMBO lbAdd "Strzelec AT SF"; COMBO lbSetData [_idx, "divr"];
     _idx = COMBO lbAdd "Saper SF"; COMBO lbSetData [_idx, "divs"];
     _idx = COMBO lbAdd "Medyk SF"; COMBO lbSetData [_idx, "divm"];
 	COMBO lbAdd "----";
 	
-    _idx = COMBO lbAdd "Dowódca sekcji logistyki"; COMBO lbSetData [_idx, "dc"];
-    _idx = COMBO lbAdd "Mechanik"; COMBO lbSetData [_idx, "eng"];
+	_idx = COMBO lbAdd "Dowódca sekcji MTR"; COMBO lbSetData [_idx, "dc"];
     _idx = COMBO lbAdd "Strzelec MTR"; COMBO lbSetData [_idx, "mtrg"];
     _idx = COMBO lbAdd "Amunicyjny MTR"; COMBO lbSetData [_idx, "mtrag"];
+	COMBO lbAdd "----";
+	
+    _idx = COMBO lbAdd "Logistyka"; COMBO lbSetData [_idx, "eng"];
 	COMBO lbAdd "----";
 	
 	

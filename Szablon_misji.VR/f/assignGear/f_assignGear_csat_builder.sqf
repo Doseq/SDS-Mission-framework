@@ -1,5 +1,5 @@
 // ====================================================================================
-// S.D.S Assign Gear Builder Script - [V-1.7.1 | 27.06.2017]
+// S.D.S Assign Gear Builder Script - [V-1.8 | 04.03.2018]
 // ====================================================================================
 
 // Dostępne klasy postaci
@@ -93,6 +93,7 @@ switch (_typeofUnit) do
 		_unit addweapon _pistol;
 		_unit addWeapon _lornetkaFTL;
 		_unit linkItem _GPS;
+		_unit addItem _radioMR;
 		["ftl"] call _backpack;
 	};
 
@@ -110,6 +111,7 @@ switch (_typeofUnit) do
 		_unit addweapon _glrifle;					//_DCrifle
 		_unit addweapon _pistol;
 		_unit addWeapon _lornetkaFTL;
+		_unit addItem _radioMR;
 		_unit linkItem _GPS;
 		["ftl"] call _backpack;
 	};
@@ -453,6 +455,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_smokegrenade,2];
 		_unit linkItem _GPS;
 		_unit addWeapon _lornetkaFTL;
+		_unit addItem _radioMR;
 		_attachments = [];
 		["vc"] call _backpack;
 	};
@@ -491,6 +494,7 @@ switch (_typeofUnit) do
 		_unit addweapon _pistol;
 		_unit addmagazines [_smokegrenade,2];
 		_unit linkItem _GPS;
+		_unit addItem _radioMR;
 		_attachments = [];
 		["pp"] call _backpack;
 	};
@@ -511,12 +515,11 @@ switch (_typeofUnit) do
 // LOADOUT: JET PILOTS
 	case "ps":
 	{
-		_unit addmagazines [_smgmag,5];
-		_unit addweapon _smg;
 		_unit addmagazines [_pistolmag,3];
 		_unit addweapon _pistol;
 		_unit addmagazines [_smokegrenade,2];
 		_unit linkItem _GPS;
+		_unit addItem _radioMR;
 		_attachments = [];
 		["ps"] call _backpack;
 	};
@@ -533,36 +536,34 @@ switch (_typeofUnit) do
 		_attachments = [];
 	};
 
-// LOADOUT: ENGINEER (DEMO)
+// LOADOUT: ENGINEER (LOGI)
 	case "eng":
 {
-		_unit addmagazines [_carbinemag,3];
-		_unit addmagazines [_carbinemag_tr,2];
+		_unit addmagazines [_smgmag,5];
+		_unit addweapon _smg;
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_grenade,2];
-		_unit addmagazines [_pistolmag,3];
-		_unit addweapon _carbine;
-		_unit addweapon _pistol;
-		_unit linkItem _GPS;
-		_unit addItem "ACE_MapTools";
-		_unit addItem "ACE_RangeTable_82mm";
+		_unit addweapon _mineDetector;
+		_unit linkItem _uavterminal;
+		_unit addWeapon _lornetkaRTO;
+		_unit addMagazines ["Laserbatteries",2];
+		_unit addItem _radioMR;
+		_attachments = [];
 		["eng"] call _backpack;
 	};
 
-// LOADOUT: ENGINEER (MINES)
+// LOADOUT: ENGINEER (HQ)
 	case "engm":
 	{
-		_unit addmagazines [_carbinemag,5];
-		_unit addweapon _carbine;
-		_unit addmagazines [_smokegrenade,1];
+		_unit addmagazines [_smgmag,5];
+		_unit addweapon _smg;
+		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_grenade,2];
-		_unit addmagazines [_pistolmag,3];
-		_unit addweapon _pistol;
-		_unit addmagazines [_APmine2,2];
-		_unit addItem "MineDetector";
+		_unit addweapon _mineDetector;
 		_unit linkItem _GPS;
 		_unit addItem _zapalnik; //zapalnik
 		_unit addItem _n_rozbraja; //zestaw do rozbrajania
+		_attachments = [];
 		["engm"] call _backpack;
 	};
 
@@ -578,13 +579,13 @@ switch (_typeofUnit) do
         _unit addmagazines [_grenade,2];
         _unit addmagazines [_pistolmag,3];
         _unit addweapon _pistol;
-		_unit linkItem _GPS; 
+		_unit linkItem _GPS;
+		_unit addItem _radioMR;
         _unit addWeapon "Laserdesignator";
         ["ftl"] call _backpack;
         _unit addMagazines ["Laserbatteries",2];
-		(unitBackpack _unit) addItemCargoGlobal [_Antena_RTO, 1];
 	};
-			
+	
  // LOADOUT: Dowódca sil specjalnych
 	case "divc":
 	{
@@ -592,12 +593,12 @@ switch (_typeofUnit) do
 		_unit addweapon _diverWepCaS;
 		_unit addmagazines [_secendMag,3];
 		_unit addweapon _secendWep;
-		_attachments = [_attach1,_scope4,_silencer2];
-		_hg_attachments= [_hg_silencer2];
+		_attachments = [_attach1,_scope2,_silencer2];
 		_unit addmagazines [_grenade,2];
 		_unit addmagazines [_mgrenade,3];
 		_unit addmagazines [_smokegrenade,2];
 		_unit linkItem _GPS;
+		_unit addItem _radioMR;
 		_unit addWeapon "Laserdesignator";
 		_unit addMagazines ["Laserbatteries",2];
 		["divc"] call _backpack;
@@ -606,12 +607,11 @@ switch (_typeofUnit) do
 // LOADOUT: Medyk sil specjalnych
 	case "divm":
 	{	
-		_unit addmagazines [_diverMagM,10];
+		_unit addmagazines [_diverMagM,6];
 		_unit addweapon _diverWepM;
 		_unit addmagazines [_secendMag,3];
 		_unit addweapon _secendWep;
-		_attachments = [_attach1,_scope4,_silencer2];
-		_hg_attachments= [_hg_silencer2];
+		_attachments = [_attach1,_scope2,_silencer2];
 		_unit addmagazines [_grenade,2];
 		_unit addmagazines [_mgrenade,3];
 		_unit addmagazines [_smokegrenade,2];
@@ -623,12 +623,11 @@ switch (_typeofUnit) do
 // LOADOUT: Saper sil specjalnych
 	case "divs":
 	{
-		_unit addmagazines [_diverMagCaS,8];
-		_unit addweapon _diverWepCaS;
+		_unit addmagazines [_diverMagR,8];
+		_unit addweapon _diverWepR;
 		_unit addmagazines [_secendMag,3];
 		_unit addweapon _secendWep;
-		_attachments = [_attach1,_scope4,_silencer2];
-		_hg_attachments= [_hg_silencer2];
+		_attachments = [_attach1,_scope2];
 		_unit addmagazines [_grenade,2];
 		_unit addmagazines [_mgrenade,3];
 		_unit addmagazines [_smokegrenade,2];
@@ -640,12 +639,11 @@ switch (_typeofUnit) do
 // LOADOUT: Strzelec AT sil specjalnych
 	case "divr":
 	{
-		_unit addmagazines [_diverMagR,6];
+		_unit addmagazines [_diverMagR,8];
 		_unit addweapon _diverWepR;
 		_unit addmagazines [_secendMag,3];
 		_unit addweapon _secendWep;
-		_attachments = [_attach1,_scope4,_silencer2];
-		_hg_attachments= [_hg_silencer2];
+		_attachments = [_attach1,_scope2];
 		_unit addmagazines [_grenade,2];
 		_unit addmagazines [_smokegrenade,2];
 		(unitBackpack _unit) addMagazineCargoGlobal [_RATmag,1];

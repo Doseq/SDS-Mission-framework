@@ -84,9 +84,10 @@
 		_unit addMagazineCargoGlobal [_MATmag2, 4];
 		_unit addMagazineCargoGlobal [_satche_small, 6];
 		_unit addMagazineCargoGlobal [_satche_big, 6];
-		_unit addItemCargoGlobal [_zapalnik, 2];
+		_unit addItemCargoGlobal [_zapalnik_b, 2];
 		_unit addItemCargoGlobal [_n_rozbraja, 2];		
 		_unit addBackpackCargoGlobal [_bagENG, 4];
+		_unit addItemCargoGlobal [_worek, 20];
 		
 	};
 
@@ -110,10 +111,6 @@
 		_unit addMagazineCargoGlobal [_smokegrenade, 8];
 		_unit addMagazineCargoGlobal [_smokegrenadeblue, 2];
 		_unit addItemCargoGlobal [_bandage, 25];
-		_unit addItemCargoGlobal [_morphine, 25];
-        _unit addItemCargoGlobal [_epinephrine, 25];
-		_unit addItemCargoGlobal [_blood, 10];
-		_unit addItemCargoGlobal [_personalAidKit, 2];
 		_unit addItemCargoGlobal [_IRstrobe, 30];
 };
 
@@ -137,10 +134,6 @@
 		_unit addMagazineCargoGlobal [_smokegrenade, 25];
 		_unit addMagazineCargoGlobal [_smokegrenadeblue, 6];
 		_unit addItemCargoGlobal [_bandage, 50];
-		_unit addItemCargoGlobal [_morphine, 50];
-        _unit addItemCargoGlobal [_epinephrine, 50];
-		_unit addItemCargoGlobal [_blood, 25];
-		_unit addItemCargoGlobal [_personalAidKit, 4];
 		_unit addItemCargoGlobal [_IRstrobe, 50];
 };
 
@@ -164,10 +157,6 @@
 		_unit addMagazineCargoGlobal [_smokegrenade, 75];
 		_unit addMagazineCargoGlobal [_smokegrenadeblue, 20];
 		_unit addItemCargoGlobal [_bandage, 150];
-		_unit addItemCargoGlobal [_morphine, 100];
-        _unit addItemCargoGlobal [_epinephrine, 100];
-		_unit addItemCargoGlobal [_blood, 50];
-		_unit addItemCargoGlobal [_personalAidKit, 6];
 		_unit addItemCargoGlobal [_IRstrobe, 70];
 };
 
@@ -183,6 +172,7 @@
         _unit addItemCargoGlobal [_epinephrine, 100];
         _unit addItemCargoGlobal [_blood, 50];
 		_unit addItemCargoGlobal [_personalAidKit, 15];
+		_unit addItemCargoGlobal [_worek, 25];
 };
 
 // CRATE: Duża skrzynka, zasoby medyczne
@@ -197,6 +187,7 @@
         _unit addItemCargoGlobal [_epinephrine, 200];
         _unit addItemCargoGlobal [_blood, 100];
 		_unit addItemCargoGlobal [_personalAidKit, 30];
+		_unit addItemCargoGlobal [_worek, 50];
 };
 
 
@@ -300,8 +291,9 @@
 		clearBackpackCargoGlobal _unit;
 		_unit addMagazineCargoGlobal [_satche_small,10];		
 		_unit addMagazineCargoGlobal [_satche_big,6];		
-		_unit addItemCargoGlobal [_zapalnik,5];
-		_unit addItemCargoGlobal [_n_rozbraja,5];
+		_unit addMagazineCargoGlobal [_satche_extra_big,4];		
+		_unit addItemCargoGlobal [_zapalnik_b,3];
+		_unit addItemCargoGlobal [_n_rozbraja,3];
 				
 	};	
 	
@@ -314,7 +306,8 @@
 		clearBackpackCargoGlobal _unit;
 		_unit addMagazineCargoGlobal [_satche_small,30];		
 		_unit addMagazineCargoGlobal [_satche_big,20];		
-		_unit addItemCargoGlobal [_zapalnik,8];
-		_unit addItemCargoGlobal [_n_rozbraja,8];
+		_unit addMagazineCargoGlobal [_satche_extra_big,10];		
+		_unit addItemCargoGlobal [_zapalnik_b,6];
+		_unit addItemCargoGlobal [_n_rozbraja,6];
 				
 	};

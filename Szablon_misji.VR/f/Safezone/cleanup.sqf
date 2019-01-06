@@ -1,4 +1,5 @@
 private ["_delcode", "_currentworld", "_oldworld", "_newworld", "_notalive"];
+if (!isDedicated) exitWith{};
 _delcode = {
 			private ["_crew"];
 			sleep 5;

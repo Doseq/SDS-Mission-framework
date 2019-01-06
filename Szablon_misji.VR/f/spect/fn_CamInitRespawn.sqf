@@ -7,75 +7,42 @@ if (isDedicated) exitWith{};
 
 if (!isDedicated && (isNull player)) then
 {
-    waitUntil {sleep 0.1; !isNull player};
+	waitUntil {sleep 0.1; !isNull player};
 };
 if (isNull _oldUnit) exitWith {};
 
 // check variables
 if (isNil "camInitRespawnNext") then
 {
-    camInitRespawnNext = true;
+	camInitRespawnNext = true;
 };
 
-if(camInitRespawnNext) then
+if( camInitRespawnNext ) then
 {
-    diag_log "Respawning camera";
-    camInitRespawnNext = false;
-	
-	oldPlayerSide = side player;
-	oldPlayerFaction = faction player;
-	oldPlayerGroup = group player;
-	oldPlayerType = typeof player;
-	oldPlayerAssignGear = _unit getVariable "f_var_assignGear";
-
-	[_unit,_oldUnit,_respawn,0,true] spawn F_fnc_CamInit;
+	diag_log "Wejscie na spectra";
+	[true] call ace_spectator_fnc_setSpectator;
 }
 else
 {
-    diag_log "Respawning JIP";
-    camInitRespawnNext = true;
-
-	[_this,_unit,_oldUnit,_respawn] spawn {
-		_respawnPos  = [0,0,5];
-	    switch (oldPlayerSide) do
-		{
-		  case west:    { _respawnPos = getMarkerPos "respawn_west"; };
-		  case east:    { _respawnPos = getMarkerPos "respawn_east"; };
-		  case resistance:  { _respawnPos = getMarkerPos "respawn_guerrila"; };
-		  case civilian: { _respawnPos = getMarkerPos "respawn_civ";};
-		};
-
-		_xUnit = oldPlayerGroup createUnit [oldPlayerType, _respawnPos, [], 0, "FORM"];
-		_xUnit allowDamage true;
-		_xUnit hideObjectGlobal false;
-		_xUnit enableSimulationGlobal true;
-		_xUnit setPos _respawnPos;
-        _xUnit setVariable ["f_var_assignGear",oldPlayerAssignGear,true];
-		selectPlayer _xUnit;
-		waituntil{player == _xUnit};
-		player switchCamera "INTERNAL";
-		deleteVehicle (_this select 1);
-		[player,_respawnPos] call bis_fnc_moveToRespawnPosition;
+    diag_log "Reap jako JIP";
+    [false] call ace_spectator_fnc_setSpectator;
 	
-		if(isNil "fJipPlayerRespawn") then
-		{
-			fJipPlayerRespawn = compile preprocessFileLineNumbers 'f\JIP\f_JIP_playerRespawn.sqf';
-		};
-		[_xUnit,_this select 2,_this select 3] call fJipPlayerRespawn;
+    player allowDamage true;
+    player setVariable ["ace_medical_allowDamage", true];
+    [player, true, "ace_spectator_isSet", side group player] call ace_common_fnc_switchToGroupSide;
+    [player, "ace_spectator_isSet"] call ace_common_fnc_unhideUnit;
+    [player, "ace_spectator_isSet"] call ace_common_fnc_unmuteUnit;
+	
+    diag_log "Przed nadaniem opcji JIP";
+	if(isNil "fJipPlayerRespawn") then
+	{
+		fJipPlayerRespawn = compile preprocessFileLineNumbers 'f\JIP\f_JIP_playerRespawn.sqf';
 	};
+	[_unit,_oldUnit,_respawn] call fJipPlayerRespawn;
+    diag_log "Po nadaniu opcji JIP";
+	
+	waitUntil{(player getVariable ["f_var_assignGear_done", false])};
+	diag_log "Zakonczenie";
 };
 
-//Przeladowanie brifu.
-waitUntil{ oldPlayerFaction == faction player };
-//f_script_briefing = [] execVM "briefing.sqf";
-
-//Czeka na zaladowanie wyposażenia.
-waitUntil{(player getVariable ["f_var_assignGear_done", false])};
-
-[] execVM "init.sqf";
-
-/*
-[] execVM "f\briefing\f_orbatNotes.sqf";
-[] execVM "f\briefing\f_loadoutNotes.sqf";
-[] execVM "f\Safezone\safety_init.sqf";
-*/
+camInitRespawnNext = !camInitRespawnNext;

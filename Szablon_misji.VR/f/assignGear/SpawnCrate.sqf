@@ -11,24 +11,24 @@ _mycrate = "";
 
 switch (_typeofCrate) do
 {
-	case "crate_small":        { _mycrate = "Box_NATO_Wps_F"; }; 
+	case "crate_small":        { _mycrate = "Box_NATO_Ammo_F"; }; 
 	case "crate_med":          { _mycrate = "B_supplyCrate_F"; };
 	case "crate_large":        { _mycrate = "B_CargoNet_01_ammo_F"; };
-	case "crate_small_explo":  { _mycrate = "Box_IND_AmmoOrd_F"; }; 
-	case "crate_large_explo":  { _mycrate = "B_supplyCrate_F"; };
-	case "crate_smallmedical": { _mycrate = "Box_East_Support_F"; };
-	case "crate_bigmedical":   { _mycrate = "I_CargoNet_01_ammo_F"; };
-	case "crate_night_small":  { _mycrate = "Box_East_Support_F"; };
-	case "crate_night_big":    { _mycrate = "B_supplyCrate_F"; };	
+	case "crate_small_explo":  { _mycrate = "Box_NATO_AmmoOrd_F"; }; 
+	case "crate_large_explo":  { _mycrate = "Box_NATO_Equip_F"; };
+	case "crate_smallmedical": { _mycrate = "Box_NATO_Support_F"; };
+	case "crate_bigmedical":   { _mycrate = "Box_NATO_Equip_F"; };
+	case "crate_night_small":  { _mycrate = "Box_NATO_Support_F"; };
+	case "crate_night_big":    { _mycrate = "Box_NATO_Equip_F"; };	
 	case "crate_mmg":          { _mycrate = "Box_IND_Wps_F"; };  
 	case "crate_mat":		   { _mycrate = "Box_NATO_WpsLaunch_F"; }; 
-	case "crate_sam":		   { _mycrate = "Box_IND_WpsLaunch_F"; };
-	case "crate_hat":          { _mycrate = "Box_East_WpsSpecial_F"; };
+	case "crate_sam":		   { _mycrate = "Box_NATO_WpsLaunch_F"; };
+	case "crate_hat":          { _mycrate = "Box_NATO_WpsLaunch_F"; };
 };
 
 _respawnPos = getMarkerPos "Crate_mark";
 	
-	_spCheck = nearestObjects[_respawnPos,["Box_NATO_Wps_F","Box_East_Support_F","B_supplyCrate_F","B_CargoNet_01_ammo_F","I_CargoNet_01_ammo_F","Box_IND_Wps_F","Box_NATO_WpsLaunch_F","Box_IND_WpsLaunch_F","Box_East_WpsSpecial_F","Box_IND_AmmoOrd_F"],10] select 0;  //"landVehicle","Air","Ship"],10] select 0;  Object'		
+	_spCheck = nearestObjects[_respawnPos,["Box_NATO_Wps_F","Box_East_Support_F","B_supplyCrate_F","B_CargoNet_01_ammo_F","I_CargoNet_01_ammo_F","Box_IND_Wps_F","Box_NATO_WpsLaunch_F","Box_IND_WpsLaunch_F","Box_NATO_Ammo_F","Box_NATO_Wps_F","Box_NATO_Equip_F","Box_NATO_AmmoOrd_F","Box_NATO_WpsLaunch_F","B_supplyCrate_F","Box_NATO_Support_F","B_CargoNet_01_ammo_F","Box_East_WpsSpecial_F","Box_IND_AmmoOrd_F"],10] select 0;  //"landVehicle","Air","Ship"],10] select 0;  Object'		
 	if(!isNil "_spCheck") then {
 		
 		deleteVehicle _spCheck;

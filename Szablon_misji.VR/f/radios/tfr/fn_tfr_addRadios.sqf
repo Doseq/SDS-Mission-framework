@@ -18,7 +18,7 @@ switch ((side player)) do { //longrange, shortrange, rifradio
 		switch (_radioFactionPlayer) do {
 			case 3: {_radio1 = "tfw_ilbe_blade_d";};		//radio dla jednostek USMC Desert 2010
 			case 4: {_radio1 = "tfw_ilbe_blade_coy";};		//radio dla jednostek USMC Woodland 2010
-			case 5: {_radio1 = "tf_rt1523g_big_bwmod";};	//radio dla jednostek PSZ LAS
+			case 6: {_radio1 = "tf_rt1523g_big_bwmod";};	//radio dla jednostek PSZ LAS
 			case 8: {_radio1 = "tf_rt1523g_sage";}; 		//radio dla jednostek US Woodland 80/90
             case 9: {_radio1 = "tfw_ilbe_blade_gr";}; 		//radio dla jednostek Everon Defense Forces
 			default {_radio1 = "tf_rt1523g_big_rhs";};		//DOMYŚLNE RADIO TRAF
